@@ -11,8 +11,8 @@ def get(url,data=None):
         print "Network error,",e
         return ""
 
-def search(keyword, year='this'):
+def search_url(keyword, year='this'):
     '''Return the url of search. year: 'this', 'next', 'forward', 'all'. '''
     year = year[0]
-    keyword = urllib.urlencode(keyword)
+    keyword = urllib.quote(keyword)
     return "http://www.wikicfp.com/cfp/servlet/tool.search?q=%s&year=%s"%(keyword,year)
